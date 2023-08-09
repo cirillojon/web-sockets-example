@@ -21,7 +21,7 @@ socket.on('message', text => {
 // Give user ability to send message
 // Listen to click event on button
 // Select the first <button> element in the document.
-document.querySelector('button').onClick = () => {
+document.querySelector('button').onclick = () => {
 
     // Select the first <input> element in the document and retrieve its value.
     const text = document.querySelector('input').value;
