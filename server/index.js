@@ -1,3 +1,7 @@
+// setup
+// npm init -y (in server directory)
+// npm install socket.io
+
 // create an http server using the http module of node.js
 const http = require('http').createServer();
 
@@ -29,3 +33,5 @@ io.on('connection', (socket) => {
 
 // Start the server listening on port 8080.
 http.listen(8080, () => console.log('listening on http://localhost:8080'));
+
+// write node . in terminal to point to this file and run it
