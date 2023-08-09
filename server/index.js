@@ -6,7 +6,6 @@ const io = require('socket.io')(http, {
     cors: { origin: "*" }
 });
 
-
 // Listen for a new connection event from a client.
 // When a client connects to the server, a 'connection' event is fired, and the provided callback function is executed.
 io.on('connection', (socket) => {
@@ -27,3 +26,6 @@ io.on('connection', (socket) => {
         io.emit('message', `${socket.id.substr(0, 2)} said ${message}`);
     });
 });
+
+// Start the server listening on port 8080.
+http.listen(8080, () => console.log('listening on http://localhost:8080'));
