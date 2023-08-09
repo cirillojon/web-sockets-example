@@ -12,9 +12,21 @@ socket.on('message', text => {
     el.innerHTML = text;
 
     // Find the first unordered list (ul) element in the document.
-    // This assumes there's an <ul> element in your HTML where messages will be appended.
     const ulElement = document.querySelector('ul');
 
     // Append the new list item to the unordered list.
     ulElement.appendChild(el);
 });
+
+// Give user ability to send message
+// Listen to click event on button
+// Select the first <button> element in the document.
+document.querySelector('button').onClick = () => {
+
+    // Select the first <input> element in the document and retrieve its value.
+    const text = document.querySelector('input').value;
+    
+    // Emit a 'message' event from the client to the server with the text from the input field.
+    // This is how the client sends a message to the server using socket.io.
+    socket.emit('message', text);
+}
